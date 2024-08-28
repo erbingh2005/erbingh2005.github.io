@@ -1,0 +1,47 @@
+<!-- En el encabezado del archivo HTML, añadir la biblioteca de html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h2>App de Gestión</h2>
+        <div class="menu-principal">
+            <button class="btn-menu" id="btnClientes">
+                <span class="icon">👤</span> Clientes
+            </button>
+            <button class="btn-menu" id="btnVentas">
+                <span class="icon">💼</span> Ventas
+            </button>
+            <button class="btn-menu" id="btnCXC">
+                <span class="icon">🧾</span> CXC Clientes
+            </button>
+            <button class="btn-menu" id="btnReportes">
+                <span class="icon">📊</span> Reportes
+            </button>
+        </div>
+        <div id="contenido"></div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch((error) => {
+        console.log('Registro de Service Worker fallido:', error);
+      });
+  }
+</script>
+</body>
+</html>
